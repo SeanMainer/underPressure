@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+<!--    This will allow a user to enter in an address via a text field
+TODO: connect to some sort of API for address verification
+TODO: stretch goal - request access to location services to get address from GPS-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_address"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="8sp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/edit_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/_123_main_st_city_state"
+        android:background="@drawable/edittext_background"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:padding="12dp"
+        android:importantForAutofill="yes"
+        android:inputType= 'textPostalAddress'
+        android:autofillHints="postalAddress"/>
+
+    <!-- Next Button (Correctly Positioned) -->
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:backgroundTint="@color/light_blue"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
