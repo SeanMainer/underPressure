@@ -17,6 +17,8 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 import com.example.underpressure.R;
 
+//Job Details Tab - setup to allow for selection + saving job details via userPref
+
 public class SubmitTab1Fragment extends Fragment {
 
     private ViewPager2 viewPager; // Store ViewPager reference
@@ -53,6 +55,7 @@ public class SubmitTab1Fragment extends Fragment {
         return root;
     }
 
+    // This (locally) saves the selections to UserLeads SharedPreferences
     private void saveSelections() {
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("UserLeads", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -79,7 +82,7 @@ public class SubmitTab1Fragment extends Fragment {
 
         editor.putString("house_size", houseSizeText);
 
-        // Generate a consolidated job details string
+        // Generate a consolidated job details string - will be used to review lead info
         StringBuilder jobDetails = new StringBuilder();
 
         if (isPressureWashingSelected) {
@@ -108,7 +111,7 @@ public class SubmitTab1Fragment extends Fragment {
         editor.putString("lead_service", jobDetails.toString());
 
         // Log what we're saving
-        Log.d("JobDetailsDebug", "Saving job details: " + jobDetails.toString());
+        //Log.d("JobDetailsDebug", "Saving job details: " + jobDetails.toString());
 
         // Apply changes
         editor.apply();

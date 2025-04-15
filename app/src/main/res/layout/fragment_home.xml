@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <!-- guideline at 50% of height to push login register buttons above keypad -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_half"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
     <TextView
         android:id="@+id/text_home"
         android:layout_width="wrap_content"
@@ -73,7 +81,7 @@
         android:backgroundTint="@color/light_blue"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/buttonLogin"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_half"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>

@@ -14,6 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.example.underpressure.databinding.FragmentSubmitBinding;
 
+//SubmitFragment contains the UI for the submit functionality, with fragment_submit.xml as the layout.
+//Sets up ViewPager2 and TabLayout (via TabLayoutMediator) for the submit process.
+//This makes the UI intuitive with a L-->R swipe (or next button click).
+
 public class SubmitFragment extends Fragment {
 
     private FragmentSubmitBinding binding;

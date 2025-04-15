@@ -94,7 +94,7 @@ public class SubmitTab4Fragment extends Fragment {
         return "• " + details.replace(", ", "\n• ");
     }
 
-    //helper method to clear the job details data - this is called after submission so checkboxes aren't pre-checked in new subimssion
+    //helper method to clear the job details data - this is called after submission so checkboxes aren't pre-checked in new submission
     private void clearJobDetails() {
         SharedPreferences sharedPrefs = requireActivity().getSharedPreferences("UserLeads", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPrefs.edit();

@@ -15,11 +15,12 @@
         android:textColor="@color/white"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Upload Photos Button -->
+    <!-- Upload Photo Button -->
     <Button
         android:id="@+id/button_upload_photos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/light_blue"
         android:text="@string/upload_photos"
         android:layout_marginBottom="16dp"/>
 

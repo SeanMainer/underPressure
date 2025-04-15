@@ -5,10 +5,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-<!--    This will allow a user to enter in an address via a text field
-TODO: connect to some sort of API for address verification
-TODO: stretch goal - request access to location services to get address from GPS-->
-
+<!--    This will allow a user to enter in an address via a text field or via location services-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +28,7 @@ TODO: stretch goal - request access to location services to get address from GPS
         android:inputType= 'textPostalAddress'
         android:autofillHints="postalAddress"/>
 
-    <!-- Next Button (Correctly Positioned) -->
+    <!-- Next Button w fixed position -->
     <Button
         android:id="@+id/buttonNext"
         android:layout_width="wrap_content"

@@ -45,6 +45,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+//Address Tab - setup to allow for address entry via using Google's FusedLocationProviderClient + GeoCodioAPI
+
 public class SubmitTab2Fragment extends Fragment {
 
     private ViewPager2 viewPager; // Store ViewPager reference
@@ -165,56 +167,57 @@ public class SubmitTab2Fragment extends Fragment {
             Toast.makeText(getContext(), "Failed to resolve address.", Toast.LENGTH_SHORT).show();
         }
     }
-    //verifyAddressWithAPI is called after address is found via reverse geocoding.
-    private void verifyAddressWithAPI(String address, boolean navigateNext) {
-        //Step 1: Clean and log the address before calling the API
-        address = address.replaceAll("\\n", " ").trim();
-        //debug
-        Log.d("GeocodioDebug", "Address submitted to API: " + address);
+//    // verifyAddressWithAPI is called after address is found via reverse geocoding - NOT IN USE
+//    private void verifyAddressWithAPI(String address, boolean navigateNext) {
+//        //Step 1: Clean and log the address before calling the API
+//        address = address.replaceAll("\\n", " ").trim();
+//        //debug
+//        Log.d("GeocodioDebug", "Address submitted to API: " + address);
+//
+//        String apiKey = BuildConfig.GEOCODIO_API_KEY;
+//
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("https://api.geocod.io/v1.7/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//
+//        GeocodioService service = retrofit.create(GeocodioService.class);
+//
+//        Call<GeocodioResponse> call = service.validateAddress(address, apiKey);
+//
+//        call.enqueue(new Callback<GeocodioResponse>() {
+//            @Override
+//            public void onResponse(@NonNull Call<GeocodioResponse> call, Response<GeocodioResponse> response) {
+//                if (response.isSuccessful() && response.body() != null && !response.body().results.isEmpty()) {
+//                    String validatedAddress = response.body().results.get(0).formatted_address;
+//
+//                    // Update the EditText with the cleaned-up, verified address
+//                    editAddress.setText(validatedAddress);
+//
+//                    // Save the validated address to SharedPreferences
+//                    SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("UserLeads", Context.MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = sharedPreferences.edit();
+//                    editor.putString("lead_address", validatedAddress);
+//                    editor.apply();
+//
+//                    Toast.makeText(getContext(), "Validated: " + validatedAddress, Toast.LENGTH_LONG).show();
+//
+//                    // Only navigate if requested
+//                    if (navigateNext && viewPager != null) {
+//                        viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
+//                    }
+//                } else {
+//                    Toast.makeText(getContext(), "Invalid address or not found.", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<GeocodioResponse> call, Throwable t) {
+//                Toast.makeText(getContext(), "Failed to verify address.", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
-        String apiKey = BuildConfig.GEOCODIO_API_KEY;
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.geocod.io/v1.7/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        GeocodioService service = retrofit.create(GeocodioService.class);
-
-        Call<GeocodioResponse> call = service.validateAddress(address, apiKey);
-
-        call.enqueue(new Callback<GeocodioResponse>() {
-            @Override
-            public void onResponse(@NonNull Call<GeocodioResponse> call, Response<GeocodioResponse> response) {
-                if (response.isSuccessful() && response.body() != null && !response.body().results.isEmpty()) {
-                    String validatedAddress = response.body().results.get(0).formatted_address;
-
-                    // Update the EditText with the cleaned-up, verified address
-                    editAddress.setText(validatedAddress);
-
-                    // Save the validated address to SharedPreferences
-                    SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("UserLeads", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("lead_address", validatedAddress);
-                    editor.apply();
-
-                    Toast.makeText(getContext(), "Validated: " + validatedAddress, Toast.LENGTH_LONG).show();
-
-                    // Only navigate if requested
-                    if (navigateNext && viewPager != null) {
-                        viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
-                    }
-                } else {
-                    Toast.makeText(getContext(), "Invalid address or not found.", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<GeocodioResponse> call, Throwable t) {
-                Toast.makeText(getContext(), "Failed to verify address.", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
 
 }

@@ -6,10 +6,9 @@
     <string name="home">Home</string>
     <string name="my_leads">My Leads</string>
     <string name="submit">Submit</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="submit_up_to_3_pictures">Submit up to 3 pictures:</string>
-    <string name="upload_photos">Upload Photos</string>
+    <string name="upload_photos">Open Camera and Add a Photo</string>
     <string name="_123_main_st_city_state">123 Main St, City, State</string>
     <string name="enter_address">Enter Address:</string>
     <string name="select_service_check_all_that_apply">Select Service (Check all that apply):</string>
@@ -25,6 +24,6 @@
     <string name="register">REGISTER</string>
     <string name="welcome_please_login_or_register">Welcome! Please Login or Register</string>
     <string name="enter_email">Enter Email</string>
-    <string name="submit_a_picture">submit a picture</string>
+    <string name="submit_a_picture">Submit a Picture</string>
     <string name="preview_of_captured_image">Preview of submitted picture</string>
 </resources>

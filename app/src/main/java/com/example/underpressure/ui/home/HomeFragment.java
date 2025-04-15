@@ -16,12 +16,15 @@ import com.example.underpressure.R;
 import com.example.underpressure.databinding.FragmentHomeBinding;
 import com.example.underpressure.ui.myleads.MyLeadsFragment;
 
+//HomeFragment contains the UI for the login and registration functionality, with
+//fragment_home.xml as the layout.
+
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private EditText editTextEmail, editTextPassword;
     private Button buttonLogin, buttonRegister;
-    private SharedPreferences sharedPreferences;
+    private SharedPreferences sharedPreferences; //used to save user credentials
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

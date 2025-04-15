@@ -42,7 +42,7 @@ public class MyLeadsFragment extends Fragment {
 
         if (TextUtils.isEmpty(allLeads.trim())) {
             TextView noLeadsText = new TextView(getContext());
-            noLeadsText.setText("No leads submitted yet.");
+            noLeadsText.setText("No leads submitted yet. Click Submit (bottom right) to add a new lead");
             noLeadsText.setTextColor(getResources().getColor(android.R.color.white));
             leadsContainer.addView(noLeadsText);
             return root;

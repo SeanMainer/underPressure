@@ -130,7 +130,7 @@ public class SubmitTab3Fragment extends Fragment {
             editor.putString("lead_photos", file.getAbsolutePath());
             editor.apply();
 
-            Log.d("PhotoDebug", "Photo saved at: " + file.getAbsolutePath());
+            //Log.d("PhotoDebug", "Photo saved at: " + file.getAbsolutePath());
             Toast.makeText(getContext(), "Photo saved successfully", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             e.printStackTrace();
